@@ -1,0 +1,8 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+table {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10%;
+}
