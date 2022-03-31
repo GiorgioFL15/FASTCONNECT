@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Create Client</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Document</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>UF</mat-label>
+    <mat-select>
+      <mat-option value="state" *ngFor="let state of states">{{
+        state.uf
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Street</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Zip Code</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Complement</mat-label>
+    <input matInput />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button>No Thanks</button>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Ok</button>
+</div>

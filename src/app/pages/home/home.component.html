@@ -1,0 +1,92 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>FASTCONNECT</span>
+    <span class="example-spacer"></span>
+    <mat-icon> perm_identity </mat-icon>
+    <h6>Admin</h6>
+  </mat-toolbar>
+</p>
+
+<button mat-flat-button class="icon-add" (click)="createClient()">
+  Create Client
+</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>position</th>
+    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="document">
+    <th mat-header-cell *matHeaderCellDef>document</th>
+    <td mat-cell *matCellDef="let element">{{ element.document }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef>phone</th>
+    <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef>city</th>
+    <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <th mat-header-cell *matHeaderCellDef>state</th>
+    <td mat-cell *matCellDef="let element">{{ element.state }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="street">
+    <th mat-header-cell *matHeaderCellDef>situation</th>
+    <td mat-cell *matCellDef="let element">{{ element.street }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="zipCode">
+    <th mat-header-cell *matHeaderCellDef>zipCode</th>
+    <td mat-cell *matCellDef="let element">{{ element.zipCode }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="complement">
+    <th mat-header-cell *matHeaderCellDef>complement</th>
+    <td mat-cell *matCellDef="let element">{{ element.complement }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td></ng-container
+  >
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<mat-paginator
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+>
+</mat-paginator>
